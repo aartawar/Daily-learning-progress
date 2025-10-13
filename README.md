@@ -2,5 +2,5 @@
 Routine task learning progress report
 
 
-what is clud?
-Cloud computing ka matlab - aapka data aur applications internet par servers mein store hote hain
+what is cloud?
+Cloud computing means that your data and applications are stored on servers on the internet.
