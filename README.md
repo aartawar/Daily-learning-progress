@@ -47,3 +47,12 @@ IAM (Identity & Access Management):
   that is used with conjuction or 
   we can say use in parallel with Access key to sign in securely
   it should be kep secret not shared publicly
+
+  S3 (Simple Storage Service):
+- What is object storage?
+  object Storage it is a modern data storage technology it is desinged for handling the 
+  unstructured data such as video,images,emails and sensor data.
+
+- What is the purpose of buckets?
+  Bucket is a cloud storage container that hold our data and it must be stored within 
+  a buckets. buckets help us to organize the data and control Access to it.
