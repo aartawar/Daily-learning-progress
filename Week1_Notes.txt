@@ -1,0 +1,114 @@
+WEEK 1 - AWS LEARNING NOTES
+============================
+
+📝 RESEARCH NOTES (Day 1)
+=========================
+
+IAM (Identity & Access Management):
+- What is IAM and why do we use it?
+  its a framework of policies that can be only accesible for authorized person 
+  those who wants to use the organizations services and resources and 
+  we use it for prevent the data breaches
+
+- Difference between Users, Groups, Roles, and Policies:
+  
+  Users - an individual identity or a person who have intraction with aws services 
+  and have long term credentials and assinged permissions individually or via groups
+  
+  Groups - Group is a collection of IAM users with shared permissions
+  to simplifying Management scale instead of assingning permissions individually
+  user can belong multiple Groups. 
+  a Group is assinged policies and all members can inherit those permissions
+
+  Roles - IAM Roles is a set of permissions 
+  that can be temporarily assumed by trusted entities 
+  and not have long term credentials
+
+  policies - IAM policies is a jSON Document that defines permissions 
+  policies are define that what kind action can be allowed or denied
+  policies can be attachced to users,groups and Roles.
+
+- What are Access Keys and Secret Keys?
+  Access key - its an unique key for identify the user
+
+  Secret key - this is confidential key 
+  that is used with conjuction or 
+  we can say use in parallel with Access key to sign in securely
+  it should be kep secret not shared publicly
+
+S3 (Simple Storage Service):
+- What is object storage?
+  object Storage it is a modern data storage technology 
+  it is desinged for handling the 
+  unstructured data such as video,images,emails and sensor data.
+
+- What is the purpose of buckets?
+  Bucket is a cloud storage container that hold our data and it must be stored within 
+  a buckets. buckets help us to organize the data and control Access to it.
+  
+- What are storage classes in S3?
+  Storage classes define 
+  how frequently data is accessed and determine cost and retrieval speed.
+  Examples include Standard (frequent access), 
+  IA (infrequent access), and Glacier (archival storage).
+
+EC2 (Elastic Compute Cloud):
+- What is an EC2 instance?
+  EC2 instance is a virtual server in AWS cloud 
+  that provides scalable computing capacity.
+  You can launch, configure, and manage 
+  these virtual machines based on your requirements.
+
+- What are key pairs and security groups used for?
+  Key pairs provide secure SSH access to EC2 instances 
+  using public-private key encryption.
+  Security groups act as virtual firewalls controlling inbound 
+  and outbound traffic to instances.
+
+- What is an AMI?
+  AMI (Amazon Machine Image) is a template containing OS, applications, and configurations.
+  It's used to launch EC2 instances with pre-configured software and settings.
+
+AWS CLI:
+- Why use CLI instead of the console?
+  CLI enables automation, scripting, and faster execution of repetitive tasks.
+  It's essential for DevOps workflows and integrating AWS operations into scripts.
+
+- Where are CLI credentials stored?
+  Credentials are stored in ~/.aws/credentials file (Linux/Mac) or %USERPROFILE%\.aws\credentials (Windows).
+  Configuration settings are stored in ~/.aws/config file for profiles and regions.
+
+- How do CLI commands communicate with AWS services?
+  CLI uses REST API calls over HTTPS to communicate with AWS services.
+  Commands are authenticated using access keys and signed with AWS Signature Version 4.
+
+💻 CLI COMMAND ANALYSIS (Day 4-5)
+=================================
+
+1. aws s3 ls
+   Purpose: Lists all S3 buckets in your account or objects within a specific bucket
+
+2. aws s3 cp notes.txt s3://devops-junior-learning-yourname/
+   Purpose: Copies a local file (notes.txt) to the specified S3 bucket
+
+3. aws ec2 describe-instances --region ap-south-1
+   Purpose: Lists all EC2 instances and their details in the ap-south-1 region
+
+🧱 TERRAFORM RESEARCH (Day 6)
+=============================
+
+- What is Terraform?
+  Terraform is an Infrastructure as Code (IaC) tool for building and managing cloud infrastructure.
+  It uses declarative configuration files to define and provision resources across multiple cloud providers.
+
+- What are providers?
+  Providers are plugins that enable Terraform to interact with cloud platforms and services.
+  AWS provider allows Terraform to manage AWS resources like EC2, S3, IAM, etc.
+
+- What are resources?
+  Resources are the fundamental building blocks in Terraform representing infrastructure components.
+  Examples include aws_instance for EC2, aws_s3_bucket for S3 buckets, etc.
+
+- What are state files?
+  State files track the current state of your infrastructure and map resources to real-world objects.
+  Terraform uses state files to determine what changes need to be made during updates.
