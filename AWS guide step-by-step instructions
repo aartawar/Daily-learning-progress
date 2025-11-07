@@ -1,0 +1,98 @@
+## Step 1: Create Your AWS Account
+1. Go to aws.amazon.com
+2. Click "Create an AWS Account"
+3. Enter your email and password
+4. Provide contact information
+5. Add payment method (credit card)
+6. Verify your phone number
+7. Choose support plan (Basic - Free)
+
+## Step 2: Understand the AWS Console
+- **Dashboard**: Main page with service overview
+- **Services menu**: Access all AWS services
+- **Region selector**: Choose your location (recommend us-east-1 for beginners)
+- **Account menu**: Billing, security, support
+- **Search bar**: Quick access to services and documentation
+
+**Recommended regions for beginners**: us-east-1 (N. Virginia) or us-west-2 (Oregon)
+**Documentation**: [AWS Console User Guide](https://docs.aws.amazon.com/awsconsolehelpdocs/)
+
+## Step 3: Set Up Security (Very Important!)
+### Enable MFA (Multi-Factor Authentication)
+1. Go to IAM service
+2. Click on your username
+3. Security credentials tab
+4. Assign MFA device
+5. Use Google Authenticator app
+
+### Create IAM User (Don't use root account)
+1. Go to IAM → Users
+2. Click "Add user"
+3. Enter username
+4. Select access type
+5. Attach policies
+6. Download credentials
+
+## Step 4: Launch Your First EC2 Instance
+1. Go to EC2 service
+2. Click "Launch Instance"
+3. Choose Amazon Linux 2 AMI
+4. Select t2.micro (free tier)
+5. Configure security group (allow SSH port 22)
+6. Create key pair (download .pem file)
+7. Launch instance
+
+**Cost**: Free (750 hours/month for 12 months)
+**Documentation**: [EC2 Getting Started](https://docs.aws.amazon.com/ec2/)
+
+### Troubleshooting:
+- **Can't connect**: Check security group allows SSH (port 22)
+- **Key pair issues**: Ensure .pem file permissions are 400 (chmod 400 keyname.pem)
+- **Instance won't start**: Check if you've exceeded free tier limits
+
+## Step 5: Create S3 Bucket (Simple Storage Service)
+1. Go to S3 service
+2. Click "Create bucket"
+3. Enter unique bucket name (globally unique)
+4. Choose region (same as EC2 for lower latency)
+5. Keep default settings
+6. Create bucket
+7. Upload a test file
+
+**Cost**: Free (5GB storage, 20,000 GET requests, 2,000 PUT requests/month)
+**Documentation**: [S3 Getting Started](https://docs.aws.amazon.com/s3/)
+
+### Troubleshooting:
+- **Bucket name taken**: Try adding numbers or your initials
+- **Access denied**: Check bucket policies and IAM permissions
+- **Upload fails**: Verify file size limits and internet connection
+
+## Step 6: Monitor Your Usage
+### Check Free Tier Usage
+1. Go to Billing Dashboard
+2. Click "Free Tier"
+3. Monitor usage limits
+4. Set up billing alerts
+
+### Set Up Billing Alerts
+1. Go to CloudWatch
+2. Create alarm
+3. Set threshold ($5-10)
+4. Add email notification
+
+## Step 7: Set Up AWS CLI (Optional but Recommended)
+1. Download AWS CLI from aws.amazon.com/cli/
+2. Install on your computer
+3. Run `aws configure`
+4. Enter Access Key ID and Secret Access Key
+5. Set default region and output format
+6. Test with `aws s3 ls`
+
+**Documentation**: [AWS CLI User Guide](https://docs.aws.amazon.com/cli/)
+
+## Step 8: Learn with Hands-On Labs
+### Recommended Learning Path:
+1. **Week 1**: EC2 and S3 basics
+   - Launch instances, connect via SSH
+   - Create buckets, upload/download files
+   - **Practice project**: Host a static website on S3
